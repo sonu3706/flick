@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public navigateToLogin(): void {
+    this.tokenService.stopBackNavigation(1);
     this.router.navigate(['auth/login']);
   }
 

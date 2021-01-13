@@ -9,6 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { TokenService } from 'src/app/services/utilities/token.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 @NgModule({
   declarations: [HeaderComponent, HomeComponent],
@@ -20,6 +22,9 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RxReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
@@ -28,6 +33,9 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RxReactiveFormsModule
   ],
   providers: [TokenService],
 })

@@ -1,20 +1,42 @@
-<div>
+<div class="container container-fluid">
   <mat-card class="login-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title> Login </mat-card-title>
       <mat-card-subtitle>User Login Page</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
-        <mat-form-field appearance="outline" class="login-form">
-          <input matInput placeholder="Email Id">
-          <mat-icon matSuffix>email</mat-icon>
-        </mat-form-field>
-     
-        <mat-form-field appearance="outline" class="login-form">
-          <input matInput placeholder="Password">
-          <mat-icon matSuffix>password</mat-icon>
-        </mat-form-field>
+    <mat-card-content class="container">
+      <form class="login-form" [formGroup]="loginFormGroup">
+        <div class="login-form">
+          <mat-form-field appearance="outline">
+            <div class="form-group">
+              <input matInput placeholder="Email Id" formControlName="userName" />
+            </div>
+            <mat-error *ngIf="loginFormGroup.controls.userName.invalid">Not a Email Id</mat-error>
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="login-form">
+          <mat-form-field appearance="outline">
+            <div class="form-group">
+              <input matInput placeholder="Password" formControlName="password" />
+            </div>
+            <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error>
+            <mat-icon matSuffix>password</mat-icon>
+          </mat-form-field>
+        </div>
+      </form>
     </mat-card-content>
+    <mat-card-actions>
+      <p>
+        <span
+          >New user !! Click <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active" > here</a> to create new account</span
+        >
+      </p>
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        Login
+      </button>
+    </mat-card-actions>
   </mat-card>
 </div>
