@@ -13,7 +13,6 @@ import { TokenService } from 'src/app/services/utilities/token.service';
 export class LoginComponent implements OnInit {
   public loginFormGroup: FormGroup;
   public loginForm: LoginForm;
-  public numberOfCalled: number = 0;
 
   constructor(private formBuilder: RxFormBuilder) {
     this.loginForm = new LoginForm();
@@ -22,11 +21,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public getData(): void {
-    console.log('getData');
-  }
 
   public onSubmit(): void {
-    console.log(this.loginFormGroup.valid);
+    if(this.loginFormGroup.valid) {
+    
+    }
   }
 }

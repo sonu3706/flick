@@ -1,27 +1,19 @@
-// .login-card {
-//     max-width: 450px;
-//     margin-top: 150px;
-//     margin-left: 350px;
-//     margin-right: 350px;
-//   }
+.example-header-image {
+  background-image: url("../../../../../assets/images/LoginIconAppl.png");
+  background-size: cover;
+}
 
-  .example-header-image {
-    background-image: url('../../../../../assets/images/LoginIconAppl.png');
-    background-size: cover;
-  }
+.main-div {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  // .login-form{
-  //   width: 400px;
-  // }
-  // .mat-card-actions{
-  //  margin-left: 90px;
-  //  .mat-raised-button {
-  //    margin-left: 60px;
-  //  }
-  // }
+.login-card {
+  width: 40%;
+}
 
-  .login-card{
-    width: 290px;
-    padding: 1.5rem;
-   
-  }
+.mat-form-field {
+  width: 100%;
+}

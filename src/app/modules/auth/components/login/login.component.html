@@ -1,16 +1,16 @@
-<div class="container container-fluid">
+<div class="container container-fluid main-div">
   <mat-card class="login-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title> Login </mat-card-title>
-      <mat-card-subtitle>User Login Page</mat-card-subtitle>
+      <mat-card-title> Authenticate yourself </mat-card-title>
+      <mat-card-subtitle>Give your credential and lets validate your account</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="container">
       <form class="login-form" [formGroup]="loginFormGroup">
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input matInput placeholder="Email Id" formControlName="userName" />
+              <input type="text" matInput placeholder="Email Id" formControlName="userName" />
             </div>
             <mat-error *ngIf="loginFormGroup.controls.userName.invalid">Not a Email Id</mat-error>
             <mat-icon matSuffix>email</mat-icon>
@@ -20,7 +20,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input matInput placeholder="Password" formControlName="password" />
+              <input type="password" matInput placeholder="Password" formControlName="password" />
             </div>
             <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error>
             <mat-icon matSuffix>password</mat-icon>
