@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/shared/components/home/home.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {HomeComponent} from './modules/shared/components/home/home.component';
 
 export const routes: Routes = [
   {
@@ -8,12 +8,20 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/auth/auth.module').then((auth) => auth.AuthModule),
   },
-  { path: 'home', component: HomeComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (dashboard) => dashboard.DashboardModule
+      ),
+  },
+  {path: 'home', component: HomeComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

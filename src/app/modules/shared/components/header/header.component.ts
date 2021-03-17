@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TokenService } from 'src/app/services/utilities/token.service';
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Router} from '@angular/router';
+import {TokenService} from 'src/app/services/utilities/token.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ import { TokenService } from 'src/app/services/utilities/token.service';
 })
 export class HeaderComponent implements OnInit {
   public isUserLoggedIn: boolean = false;
-  constructor(private router: Router, private tokenService: TokenService) {}
+
+  constructor(private router: Router, private tokenService: TokenService) {
+  }
 
   ngOnInit(): void {
     this.checkIfUserIsLoggedIn();
@@ -27,5 +30,10 @@ export class HeaderComponent implements OnInit {
 
   public navigateToHome(): void {
     this.router.navigate(['home']);
+  }
+
+  public message(): void {
+    console.log('home');
+
   }
 }

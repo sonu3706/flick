@@ -1,0 +1,10 @@
+<div>
+  <mat-form-field appearance="legacy">
+    <mat-label>Search Movie</mat-label>
+    <input matInput [formControl]="searchFormControl"/>
+    <button mat-icon-button (click)="startToListen()">
+      <mat-icon matSuffix>mic</mat-icon>
+    </button>
+    <!-- <mat-icon matSuffix>search</mat-icon> -->
+  </mat-form-field>
+</div>

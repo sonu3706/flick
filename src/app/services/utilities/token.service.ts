@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
 
 @Injectable()
 export class TokenService {
@@ -12,5 +12,9 @@ export class TokenService {
     if (accessToken) {
       this.userLoggedIn.next(true);
     }
+  }
+
+  public saveTokenToSessionStorage(token: string) {
+    window.sessionStorage.setItem('access_token', token);
   }
 }

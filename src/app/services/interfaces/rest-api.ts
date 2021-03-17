@@ -1,9 +1,11 @@
-import { Interface } from 'readline';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 
 export interface RestApi {
-  getData(): Observable<any>;
-  postData(): void;
-  putData(): void;
-  deleteData(): void;
+  getData(baseUrl: string, actionUrl: string): Observable<any>;
+
+  postData(baseUrl: string, actionUrl: string, body: any): void;
+
+  putData(baseUrl: string, actionUrl: string): void;
+
+  deleteData(baseUrl: string, actionUrl: string): void;
 }

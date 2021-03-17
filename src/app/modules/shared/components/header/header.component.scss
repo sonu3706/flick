@@ -1,3 +1,13 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
+
+.search {
+  left: 0;
+  position: absolute;
+  text-align: center;
+ // top: 2px;
+  width: 97%;
+  z-index: 100;
+
+}

@@ -85,19 +85,21 @@ context('Misc', () => {
       Cypress.Screenshot.defaults({
         blackout: ['.foo'],
         capture: 'viewport',
-        clip: { x: 0, y: 0, width: 200, height: 200 },
+        clip: {x: 0, y: 0, width: 200, height: 200},
         scale: false,
         disableTimersAndAnimations: true,
         screenshotOnRunFailure: true,
-        onBeforeScreenshot () { },
-        onAfterScreenshot () { },
+        onBeforeScreenshot() {
+        },
+        onAfterScreenshot() {
+        },
       })
     })
   })
 
   it('cy.wrap() - wrap an object', () => {
     // https://on.cypress.io/wrap
-    cy.wrap({ foo: 'bar' })
+    cy.wrap({foo: 'bar'})
       .should('have.property', 'foo')
       .and('include', 'bar')
   })
