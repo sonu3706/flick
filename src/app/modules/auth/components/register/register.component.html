@@ -7,11 +7,10 @@
     </mat-card-header>
     <mat-card-content class="container">
       <form class="login-form" [formGroup]="registerFormGroup">
-
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="text" matInput placeholder="Full Name" formControlName="name"/>
+              <input type="text" matInput placeholder="Full Name" formControlName="name" />
             </div>
             <mat-error *ngIf="registerFormGroup.controls.name.invalid">Cannot be empty</mat-error>
             <mat-icon matSuffix>account_circle</mat-icon>
@@ -21,7 +20,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="text" matInput placeholder="Email Id" formControlName="email"/>
+              <input type="text" matInput placeholder="Email Id" formControlName="email" />
             </div>
             <mat-error *ngIf="registerFormGroup.controls.email.invalid">Enter a valid email id</mat-error>
             <mat-icon matSuffix>email</mat-icon>
@@ -31,7 +30,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="password" matInput placeholder="Password" formControlName="password"/>
+              <input type="password" matInput placeholder="Password" formControlName="password" />
             </div>
             <mat-error *ngIf="registerFormGroup.controls.password.invalid">Password should be of 8 character</mat-error>
             <mat-icon matSuffix>password</mat-icon>
@@ -41,7 +40,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="password" matInput placeholder="Retype password" formControlName="confirmPassword"/>
+              <input type="password" matInput placeholder="Retype password" formControlName="confirmPassword" />
             </div>
             <mat-error *ngIf="registerFormGroup.controls.confirmPassword.invalid">Password should be of 8 character
             </mat-error>
@@ -53,9 +52,10 @@
     </mat-card-content>
     <mat-card-actions>
       <p>
-          <span
-          >Already have account with us!! click <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active"> here</a> to authenticate your account</span
-          >
+        <span>Already have account with us!! click
+          <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active">
+            here</a>
+          to authenticate your account</span>
       </p>
       <button mat-raised-button color="primary" (click)="onSubmit()">
         Register

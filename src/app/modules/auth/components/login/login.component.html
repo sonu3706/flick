@@ -10,7 +10,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="text" matInput placeholder="Email Id" formControlName="userName"/>
+              <input type="text" matInput placeholder="Email Id" formControlName="userName" />
             </div>
             <mat-error *ngIf="loginFormGroup.controls.userName.invalid">Not a Email Id</mat-error>
             <mat-icon matSuffix>email</mat-icon>
@@ -20,7 +20,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="password" matInput placeholder="Password" formControlName="password"/>
+              <input type="password" matInput placeholder="Password" formControlName="password" />
             </div>
             <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error>
             <mat-icon matSuffix>password</mat-icon>
@@ -30,9 +30,10 @@
     </mat-card-content>
     <mat-card-actions>
       <p>
-        <span
-        >New user !! Click <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active"> here</a> to create new account</span
-        >
+        <span>New user !! Click
+          <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active">
+            here</a>
+          to create new account</span>
       </p>
       <button mat-raised-button color="primary" (click)="onSubmit()">
         Login
