@@ -8,6 +8,11 @@ import { SharedModule } from '../shared/shared.module';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MyMoviesComponent } from './components/my-movies/my-movies.component';
 import { MovieService } from 'src/app/services/utilities/movie.service';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { LatestComponent } from './components/latest/latest.component';
+import { NowPlayingComponent } from './components/now-playing/now-playing.component';
+import { TopRatedComponent } from './components/top-rated/top-rated.component';
+import { UpcomingComponent } from './components/upcoming/upcoming.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +21,11 @@ import { MovieService } from 'src/app/services/utilities/movie.service';
     TrendingComponent,
     MovieCardComponent,
     MyMoviesComponent,
+    FavoriteComponent,
+    LatestComponent,
+    NowPlayingComponent,
+    TopRatedComponent,
+    UpcomingComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
   providers: []

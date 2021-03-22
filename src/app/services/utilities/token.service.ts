@@ -1,7 +1,9 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TokenService {
   public userLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
@@ -16,5 +18,15 @@ export class TokenService {
 
   public saveTokenToSessionStorage(token: string) {
     window.sessionStorage.setItem('access_token', token);
+  }
+
+  /**
+   * removeTokenFromSessionStorage
+   */
+  public removeTokenFromSessionStorage() {
+    let accessToken = window.sessionStorage.getItem('access_token');
+    if (accessToken) {
+      window.sessionStorage.removeItem('access_token');
+    }
   }
 }

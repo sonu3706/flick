@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.loginService.postData(baseUrl, restUrl, user).subscribe(
         (data: LoginResponse) => {
           this.tokenService.saveTokenToSessionStorage(data.access_token);
-            this.router.navigate(['/dashboard/my-movies']);
+            this.router.navigate(['/dashboard/trending']);
         },
         (error: HttpErrorResponse) => {
           console.error('Error occurred  while login', error);

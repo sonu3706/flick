@@ -78,6 +78,6 @@ export class SpeechRecognitionService {
 
   public textToSpeechForRoute(pageName: string): void {
     let utterWord = new SpeechSynthesisUtterance('Here is ' + pageName + 'page for you');
-    this.synth.speak(utterWord);
+   // this.synth.speak(utterWord);
   }
 }

@@ -20,7 +20,7 @@
         <div class="login-form">
           <mat-form-field appearance="outline">
             <div class="form-group">
-              <input type="text" matInput placeholder="Email Id" formControlName="email" />
+              <input type="email" matInput placeholder="Email Id" formControlName="email" />
             </div>
             <mat-error *ngIf="registerFormGroup.controls.email.invalid">Enter a valid email id</mat-error>
             <mat-icon matSuffix>email</mat-icon>

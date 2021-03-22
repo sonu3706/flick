@@ -22,4 +22,9 @@ export class MovieCardComponent implements OnInit {
     this.buttonLabel = 'Remove';
     this.buttonColor = 'warn';
   }
+
+  /**
+   * viewMovieInfo
+   */
+  public viewMovieInfo(movie: Movie) {}
 }

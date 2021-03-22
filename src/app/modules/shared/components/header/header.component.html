@@ -1,20 +1,81 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button *ngIf="isUserLoggedIn">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Flick</span>
-  <span class="example-spacer"></span>
-  <div class="search" *ngIf="true">
-    <app-search></app-search>
-  </div>
-  <button
-    mat-button
-    class="example-icon"
-    (click)="navigateToLogin()"
-  >
-    <span>Login</span>
-  </button>
-  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-       <mat-icon>share</mat-icon>
-     </button> -->
+  <mat-toolbar-row>
+    <button (click)="sidenav.toggle()" mat-icon-button *ngIf="isUserLoggedIn">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Flick</span>
+    <span class="example-spacer"></span>
+    <div class="search" *ngIf="isUserLoggedIn">
+      <app-search></app-search>
+    </div>
+
+    <button *ngIf="!isUserLoggedIn" mat-button class="example-icon" (click)="navigateToLogin()">
+      <span>Login</span>
+    </button>
+    <button *ngIf="isUserLoggedIn" mat-icon-button class="example-icon" [matMenuTriggerFor]="belowMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu  #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item (click)="navigateToEditProfile()">
+        <mat-icon>mode</mat-icon>Edit Profile
+      </button>
+      <button mat-menu-item (click)="navigateToChangePassword()">
+        <mat-icon>password</mat-icon>
+        Change Password
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
 </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <div>
+        <button *ngIf="isUserLoggedIn" mat-button class="example-icon" (click)="navigateToFavorite()"
+          (click)="sidenav.toggle()">
+          <mat-icon>favorite</mat-icon>
+          <span>Favorite</span>
+        </button>
+      </div>
+      <div>
+        <button *ngIf="isUserLoggedIn" mat-button class="example-icon" (click)="navigateToTrending()"
+          (click)="sidenav.toggle()">
+          <mat-icon>trending_up</mat-icon>
+          <span>Trending</span>
+        </button>
+      </div>
+      <div>
+        <button *ngIf="isUserLoggedIn" mat-button class="example-icon" (click)="navigateToRecommended()"
+          (click)="sidenav.toggle()">
+          <mat-icon>thumb_up_alt</mat-icon>
+          <span>Recommended</span>
+        </button>
+      </div>
+
+      <div>
+        <button *ngIf="isUserLoggedIn" mat-button class="example-icon" (click)="navigateToUpcoming()"
+          (click)="sidenav.toggle()">
+          <mat-icon>upcoming</mat-icon>
+          <span>Upcoming</span>
+        </button>
+      </div>
+
+      <div>
+        <button *ngIf="isUserLoggedIn" mat-button class="example-icon" (click)="navigateToTopRated()"
+          (click)="sidenav.toggle()">
+          <mat-icon>star_rate</mat-icon>
+          <span>Top Rated</span>
+        </button>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
