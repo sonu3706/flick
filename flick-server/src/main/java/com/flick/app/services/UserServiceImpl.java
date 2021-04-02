@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Map<String, String> loginUser(String userEmail, String password) throws UserIdAndPasswordMismatch, UserNotFound {
+      String s = null;
         Map<String, String> tokenMap = new HashMap<>();
         if (this.userRepository.existsById(userEmail)) {
             User user = this.userRepository.findByUserEmailAndPassword(userEmail, password);
