@@ -15,7 +15,7 @@
     <button *ngIf="isUserLoggedIn" mat-icon-button class="example-icon" [matMenuTriggerFor]="belowMenu">
       <mat-icon>account_circle</mat-icon>
     </button>
-    <mat-menu  #belowMenu="matMenu" yPosition="below">
+    <mat-menu #belowMenu="matMenu" yPosition="below">
       <button mat-menu-item (click)="navigateToEditProfile()">
         <mat-icon>mode</mat-icon>Edit Profile
       </button>
