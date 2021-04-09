@@ -10,8 +10,8 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 public class Password {
-    private String userEmail;
-    private String currentPassword;
-    private String newPassword;
-    private String confirmPassword;
+  private String userEmail;
+  private String currentPassword;
+  private String newPassword;
+  private String confirmPassword;
 }

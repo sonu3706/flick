@@ -1,6 +1,5 @@
 package com.flick.app.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,13 +13,13 @@ import java.time.LocalDate;
 @Setter
 @ToString
 public class User {
-    @Id
-    private String userEmail;
-    private String firstName;
-    private String lastName;
-    private String password;
-    private Boolean userActive;
-    private LocalDate userAddedOn;
+  @Id
+  private String userEmail;
+  private String firstName;
+  private String lastName;
+  private String password;
+  private Boolean userActive;
+  private LocalDate userAddedOn;
 
 
 }

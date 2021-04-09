@@ -12,65 +12,65 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/v1/users")
 public class UserController {
 
-    private UserService userService;
+  private UserService userService;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+  @Autowired
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
-    @PostMapping(value = "/register")
-    public ResponseEntity<?> registerUser(@RequestBody User user) {
-        ResponseEntity<?> responseEntity = null;
-        try {
-            responseEntity = ResponseEntity.status(201).body(this.userService.registerUser(user));
-        } catch (Exception exception) {
-            responseEntity = ResponseEntity.status(409).body(exception.getMessage());
-        }
-        return responseEntity;
+  @PostMapping(value = "/register")
+  public ResponseEntity<?> registerUser(@RequestBody User user) {
+    ResponseEntity<?> responseEntity = null;
+    try {
+      responseEntity = ResponseEntity.status(201).body(this.userService.registerUser(user));
+    } catch (Exception exception) {
+      responseEntity = ResponseEntity.status(409).body(exception.getMessage());
     }
+    return responseEntity;
+  }
 
-    @PostMapping(value = "/login")
-    public ResponseEntity<?> loginUser(@RequestBody User user) {
-        ResponseEntity<?> responseEntity = null;
-        try {
-            responseEntity = ResponseEntity.status(200).body(this.userService.loginUser(user.getUserEmail(), user.getPassword()));
-        } catch (Exception exception) {
-            responseEntity = ResponseEntity.status(409).body(exception.getMessage());
-        }
-        return responseEntity;
+  @PostMapping(value = "/login")
+  public ResponseEntity<?> loginUser(@RequestBody User user) {
+    ResponseEntity<?> responseEntity = null;
+    try {
+      responseEntity = ResponseEntity.status(200).body(this.userService.loginUser(user.getUserEmail(), user.getPassword()));
+    } catch (Exception exception) {
+      responseEntity = ResponseEntity.status(409).body(exception.getMessage());
     }
+    return responseEntity;
+  }
 
-    @PostMapping(value = "/change-password")
-    public ResponseEntity<?> changePassword(@RequestBody Password password) {
-        ResponseEntity<?> responseEntity = null;
-        try {
-            responseEntity = ResponseEntity.status(200).body(this.userService.changePassword(password));
-        } catch (Exception exception) {
-            responseEntity = ResponseEntity.status(409).body(exception.getMessage());
-        }
-        return responseEntity;
+  @PostMapping(value = "/change-password")
+  public ResponseEntity<?> changePassword(@RequestBody Password password) {
+    ResponseEntity<?> responseEntity = null;
+    try {
+      responseEntity = ResponseEntity.status(200).body(this.userService.changePassword(password));
+    } catch (Exception exception) {
+      responseEntity = ResponseEntity.status(409).body(exception.getMessage());
     }
+    return responseEntity;
+  }
 
-    @PostMapping(value = "/change-profile")
-    public ResponseEntity<?> changeProfile(@RequestBody User user) {
-        ResponseEntity<?> responseEntity = null;
-        try {
-            responseEntity = ResponseEntity.status(200).body(this.userService.changeProfile(user));
-        } catch (Exception exception) {
-            responseEntity = ResponseEntity.status(409).body(exception.getMessage());
-        }
-        return responseEntity;
+  @PostMapping(value = "/change-profile")
+  public ResponseEntity<?> changeProfile(@RequestBody User user) {
+    ResponseEntity<?> responseEntity = null;
+    try {
+      responseEntity = ResponseEntity.status(200).body(this.userService.changeProfile(user));
+    } catch (Exception exception) {
+      responseEntity = ResponseEntity.status(409).body(exception.getMessage());
     }
+    return responseEntity;
+  }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<?> getUserProfileByUserEmail(@PathVariable("id") String id) {
-        ResponseEntity<?> responseEntity = null;
-        try {
-            responseEntity = ResponseEntity.status(200).body(this.userService.getUserProfileByUserEmail(id));
-        } catch (Exception exception) {
-            responseEntity = ResponseEntity.status(409).body(exception.getMessage());
-        }
-        return responseEntity;
+  @GetMapping(value = "/{id}")
+  public ResponseEntity<?> getUserProfileByUserEmail(@PathVariable("id") String id) {
+    ResponseEntity<?> responseEntity = null;
+    try {
+      responseEntity = ResponseEntity.status(200).body(this.userService.getUserProfileByUserEmail(id));
+    } catch (Exception exception) {
+      responseEntity = ResponseEntity.status(409).body(exception.getMessage());
     }
+    return responseEntity;
+  }
 }
