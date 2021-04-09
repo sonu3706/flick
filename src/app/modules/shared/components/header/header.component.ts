@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   public checkIfUserIsLoggedIn(): void {
     this.tokenService.userLoggedIn.subscribe((data: boolean) => {
       this.isUserLoggedIn = data;
-      // this.isUserLoggedIn = true;
     });
   }
 

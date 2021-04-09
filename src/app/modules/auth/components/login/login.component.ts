@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
       this.loginService.postData(baseUrl, restUrl, user).subscribe(
         (data: LoginResponse) => {
           this.tokenService.saveTokenToSessionStorage(data.access_token);
+          this.tokenService.userLoggedIn.next(true);
             this.router.navigate(['/dashboard/trending']);
         },
         (error: HttpErrorResponse) => {
