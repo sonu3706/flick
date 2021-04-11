@@ -35,14 +35,16 @@ export class LoginComponent implements OnInit {
     if (this.loginFormGroup.valid) {
       const baseUrl = 'http://localhost:8081/api/v1/users';
       const restUrl = '/login';
-      let user: User = new User();
+      const user: User = new User();
       user.userEmail = this.loginFormGroup.controls.userName.value;
       user.password = this.loginFormGroup.controls.password.value;
       this.loginService.postData(baseUrl, restUrl, user).subscribe(
         (data: LoginResponse) => {
-          this.tokenService.saveTokenToSessionStorage(data.access_token);
+          this.tokenService.saveTokenToSessionStorage(data.access_token, data.userId);
           this.tokenService.userLoggedIn.next(true);
-            this.router.navigate(['/dashboard/trending']);
+          this.router.navigate(['/dashboard/trending']).then(r => {
+            console.log(r);
+          });
         },
         (error: HttpErrorResponse) => {
           console.error('Error occurred  while login', error);

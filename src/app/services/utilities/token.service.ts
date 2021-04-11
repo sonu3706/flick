@@ -16,8 +16,9 @@ export class TokenService {
     }
   }
 
-  public saveTokenToSessionStorage(token: string) {
+  public saveTokenToSessionStorage(token: string, userId: string): void {
     window.sessionStorage.setItem('access_token', token);
+    window.sessionStorage.setItem('userId', userId);
   }
 
   /**

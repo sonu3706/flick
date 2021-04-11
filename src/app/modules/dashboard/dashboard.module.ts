@@ -13,6 +13,7 @@ import { LatestComponent } from './components/latest/latest.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
     TopRatedComponent,
     UpcomingComponent,
   ],
-  imports: [CommonModule, DashboardRoutingModule, SharedModule],
+    imports: [CommonModule, DashboardRoutingModule, SharedModule, FlexLayoutModule],
   providers: []
 })
 export class DashboardModule {}

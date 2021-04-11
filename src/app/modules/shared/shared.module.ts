@@ -15,6 +15,8 @@ import { AssistComponent } from './components/assist/assist.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    MatSnackBarModule
   ],
   exports: [
     HeaderComponent,
@@ -52,6 +55,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [],
 })
