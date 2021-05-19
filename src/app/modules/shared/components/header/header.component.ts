@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
 
   public checkIfUserIsLoggedIn(): void {
     this.tokenService.userLoggedIn.subscribe((data: boolean) => {
+      console.log(data);
+      
       this.isUserLoggedIn = data;
     });
   }
