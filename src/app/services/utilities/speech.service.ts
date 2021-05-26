@@ -32,7 +32,7 @@ export class SpeechRecognitionService {
         .join('');
       this.tempWords = transcript;
       console.log(transcript);
-      
+
       if (this.routeSpeechActive) {
         this.routeValue.next(this.tempWords);
       } else if (this.movieSearchSpeechActive) {
@@ -72,12 +72,16 @@ export class SpeechRecognitionService {
   }
 
   public textToSpeech(dataLength: number, movieName: string): void {
-    let utterWord = new SpeechSynthesisUtterance('Found' + dataLength + 'results' + 'for movie' + movieName);
+    let utterWord = new SpeechSynthesisUtterance(
+      'Found' + dataLength + 'results' + 'for movie' + movieName
+    );
     this.synth.speak(utterWord);
   }
 
   public textToSpeechForRoute(pageName: string): void {
-    let utterWord = new SpeechSynthesisUtterance('Here is ' + pageName + 'page for you');
-   // this.synth.speak(utterWord);
+    let utterWord = new SpeechSynthesisUtterance(
+      'Here is ' + pageName + 'page for you'
+    );
+    // this.synth.speak(utterWord);
   }
 }

@@ -13,12 +13,12 @@ export class RegisterForm {
   @email()
   public email: string | undefined;
   @required()
-  @maxLength({value: 15})
-  @minLength({value: 8})
+  @maxLength({ value: 15 })
+  @minLength({ value: 8 })
   public password: string | undefined;
   @required()
-  @maxLength({value: 15})
-  @minLength({value: 8})
-  @compare({fieldName: 'password'})
+  @maxLength({ value: 15 })
+  @minLength({ value: 8 })
+  @compare({ fieldName: 'password' })
   public confirmPassword: string | undefined;
 }

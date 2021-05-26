@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {TrendingComponent} from './trending.component';
+import { TrendingComponent } from './trending.component';
 
 describe('TrendingComponent', () => {
   let component: TrendingComponent;
@@ -8,9 +8,8 @@ describe('TrendingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TrendingComponent]
-    })
-      .compileComponents();
+      declarations: [TrendingComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 export interface RestApi {
   getData(baseUrl: string, actionUrl: string): Observable<any>;

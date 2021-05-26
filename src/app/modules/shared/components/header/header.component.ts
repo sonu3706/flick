@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private tokenService: TokenService) {}
 
   ngOnInit(): void {
-   // this.isUserLoggedIn = true;
+    // this.isUserLoggedIn = true;
     this.checkIfUserIsLoggedIn();
   }
 
@@ -27,23 +27,22 @@ export class HeaderComponent implements OnInit {
   }
 
   public navigateToLogin(): void {
-    this.router.navigate(['auth/login']).then(r => {
-      console.log(r);
-    });
+    console.log('Login button clicked');
+    this.router.navigate(['auth/login']);
   }
 
   public navigateToHome(): void {
-    this.router.navigate(['home']).then(r => {});
+    this.router.navigate(['home']).then((r) => {});
   }
 
   public navigateToFavorite(): void {
-    this.router.navigate(['dashboard/favorite']).then(r => {});
+    this.router.navigate(['dashboard/favorite']).then((r) => {});
   }
   public navigateToTrending(): void {
-    this.router.navigate(['dashboard/trending']).then(r => {});
+    this.router.navigate(['dashboard/trending']).then((r) => {});
   }
   public navigateToRecommended(): void {
-    this.router.navigate(['dashboard/recommended']).then(r => {});
+    this.router.navigate(['dashboard/recommended']).then((r) => {});
   }
 
   /**
@@ -51,34 +50,34 @@ export class HeaderComponent implements OnInit {
    */
   public logout(): void {
     this.tokenService.removeTokenFromSessionStorage();
-    this.router.navigate(['/home']).then(r => {});
+    this.router.navigate(['/home']).then((r) => {});
   }
 
   /**
    * navigateToChangePassword
    */
   public navigateToChangePassword(): void {
-    this.router.navigate(['auth/change-password']).then(r => {});
+    this.router.navigate(['auth/change-password']).then((r) => {});
   }
 
   /**
    * navigateToEditProfile
    */
   public navigateToEditProfile(): void {
-    this.router.navigate(['auth/edit-profile']).then(r => {});
+    this.router.navigate(['auth/edit-profile']).then((r) => {});
   }
 
   /**
    * navigateToUpcoming
    */
   public navigateToUpcoming(): void {
-    this.router.navigate(['dashboard/upcoming']).then(r => {});
+    this.router.navigate(['dashboard/upcoming']).then((r) => {});
   }
 
   /**
    * navigateToTopRated
    */
   public navigateToTopRated(): void {
-    this.router.navigate(['dashboard/top-rated']).then(r => {});
+    this.router.navigate(['dashboard/top-rated']).then((r) => {});
   }
 }

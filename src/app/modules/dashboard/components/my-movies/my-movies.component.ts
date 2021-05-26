@@ -5,24 +5,23 @@ import { MovieService } from 'src/app/services/utilities/movie.service';
 @Component({
   selector: 'app-my-movies',
   templateUrl: './my-movies.component.html',
-  styleUrls: ['./my-movies.component.scss']
+  styleUrls: ['./my-movies.component.scss'],
 })
 export class MyMoviesComponent implements OnInit {
-
   public movieObjects: Movie[] = [];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-     this.getSearchMoviesData();
+    this.getSearchMoviesData();
   }
 
   public getSearchMoviesData(): void {
-    this.movieService.getMovieData().subscribe(data => {
-      if(data) {
+    this.movieService.getMovieData().subscribe((data) => {
+      if (data) {
         console.log(data);
         this.movieObjects = data;
       }
-    })
+    });
   }
 }

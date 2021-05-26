@@ -1,4 +1,4 @@
-export class ChangePasswordModel{
+export class ChangePasswordModel {
   public userEmail: string | null;
   public currentPassword: string;
   public newPassword: string;

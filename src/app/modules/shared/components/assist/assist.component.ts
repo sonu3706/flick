@@ -9,7 +9,10 @@ import { SpeechRecognitionService } from 'src/app/services/utilities/speech.serv
   styleUrls: ['./assist.component.scss'],
 })
 export class AssistComponent implements OnInit {
-  constructor(private speechService: SpeechRecognitionService, private router: Router) {
+  constructor(
+    private speechService: SpeechRecognitionService,
+    private router: Router
+  ) {
     this.speechService.routeSpeechActive = true;
     this.speechService.initialize();
   }
@@ -25,16 +28,18 @@ export class AssistComponent implements OnInit {
   }
 
   public getSpokenWord(): void {
-    this.speechService.routeValue.pipe(debounceTime(1000)).subscribe(value => {
-      console.log(value);
-      if(value === 'login') {
-        this.router.navigate(['/auth/login']);
-      } else if (value === 'register') {
-        this.router.navigate(['/auth/register']);
-      }
+    this.speechService.routeValue
+      .pipe(debounceTime(1000))
+      .subscribe((value) => {
+        console.log(value);
+        if (value === 'login') {
+          this.router.navigate(['/auth/login']);
+        } else if (value === 'register') {
+          this.router.navigate(['/auth/register']);
+        }
 
-      this.speechService.textToSpeechForRoute(value);
-      this.speechService.stop();
-    });
+        this.speechService.textToSpeechForRoute(value);
+        this.speechService.stop();
+      });
   }
 }

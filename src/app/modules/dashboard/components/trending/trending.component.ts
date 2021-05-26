@@ -22,7 +22,8 @@ export class TrendingComponent implements OnInit {
    */
   public getTrendingList(): void {
     const baseUrl: string = 'https://api.themoviedb.org/';
-    const restUrl: string = '3/trending/all/day?api_key=06203334b59c6a533b36ecd954eb2d14';
+    const restUrl: string =
+      '3/trending/all/day?api_key=06203334b59c6a533b36ecd954eb2d14';
     this.trendingService.getData(baseUrl, restUrl).subscribe((data) => {
       this.trendingMovieObject = data.results;
     });

@@ -1,12 +1,12 @@
-import {HttpErrorResponse} from '@angular/common/http';
-import {Component, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import {RxFormBuilder} from '@rxweb/reactive-form-validators';
-import {LoginForm} from 'src/app/models/login-form.model';
+import { RxFormBuilder } from '@rxweb/reactive-form-validators';
+import { LoginForm } from 'src/app/models/login-form.model';
 import { LoginResponse } from 'src/app/models/login-response.model';
-import {User} from 'src/app/models/user.model';
-import {RestApiService} from 'src/app/services/utilities/restapi.service';
+import { User } from 'src/app/models/user.model';
+import { RestApiService } from 'src/app/services/utilities/restapi.service';
 import { TokenService } from 'src/app/services/utilities/token.service';
 
 @Component({
@@ -28,8 +28,7 @@ export class LoginComponent implements OnInit {
     this.loginFormGroup = this.formBuilder.formGroup(this.loginForm);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onSubmit(): void {
     if (this.loginFormGroup.valid) {
@@ -40,9 +39,12 @@ export class LoginComponent implements OnInit {
       user.password = this.loginFormGroup.controls.password.value;
       this.loginService.postData(baseUrl, restUrl, user).subscribe(
         (data: LoginResponse) => {
-          this.tokenService.saveTokenToSessionStorage(data.access_token, data.userId);
+          this.tokenService.saveTokenToSessionStorage(
+            data.access_token,
+            data.userId
+          );
           this.tokenService.userLoggedIn.next(true);
-          this.router.navigate(['/dashboard/trending']).then(r => {
+          this.router.navigate(['/dashboard/trending']).then((r) => {
             console.log(r);
           });
         },

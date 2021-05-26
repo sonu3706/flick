@@ -36,12 +36,14 @@ export class ChangePasswordComponent implements OnInit {
       const baseUrl = 'http://localhost:8081/api/v1/users';
       const restUrl = '/change-password';
       this.changePasswordObject = new ChangePasswordModel();
-      this.changePasswordObject.userEmail = window.sessionStorage.getItem(
-        'userId'
-      );
-      this.changePasswordObject.currentPassword = this.changePasswordFormGroup.controls.currentPassword.value;
-      this.changePasswordObject.newPassword = this.changePasswordFormGroup.controls.newPassword.value;
-      this.changePasswordObject.confirmPassword = this.changePasswordFormGroup.controls.confirmPassword.value;
+      this.changePasswordObject.userEmail =
+        window.sessionStorage.getItem('userId');
+      this.changePasswordObject.currentPassword =
+        this.changePasswordFormGroup.controls.currentPassword.value;
+      this.changePasswordObject.newPassword =
+        this.changePasswordFormGroup.controls.newPassword.value;
+      this.changePasswordObject.confirmPassword =
+        this.changePasswordFormGroup.controls.confirmPassword.value;
       this.changePasswordService
         .postData(baseUrl, restUrl, this.changePasswordObject)
         .subscribe((data) => {

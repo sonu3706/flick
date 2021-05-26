@@ -3,8 +3,13 @@
     <mat-card-title>{{ movie.title }}</mat-card-title>
     <mat-card-subtitle>{{ movie.original_title }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }}" alt="Photo of a Shiba Inu"
-    width="500" height="300" />
+  <img
+    mat-card-image
+    src="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }}"
+    alt="Photo of a Shiba Inu"
+    width="500"
+    height="300"
+  />
   <mat-card-content>
     {{ movie.overview }}
   </mat-card-content>
@@ -12,8 +17,6 @@
     <button mat-raised-button [color]="buttonColor" (click)="saveMovie(movie)">
       {{ buttonLabel }}
     </button>
-    <button mat-raised-button [color]="buttonColor">
-      More Info
-    </button>
+    <button mat-raised-button [color]="buttonColor">More Info</button>
   </mat-card-actions>
 </mat-card>

@@ -10,7 +10,7 @@ export class TokenService {
   );
 
   public readTokenFromSessionStorage(): void {
-    let accessToken = window.sessionStorage.getItem('access_token');
+    const accessToken = window.sessionStorage.getItem('access_token');
     if (accessToken) {
       this.userLoggedIn.next(true);
     }
@@ -24,8 +24,8 @@ export class TokenService {
   /**
    * removeTokenFromSessionStorage
    */
-  public removeTokenFromSessionStorage() {
-    let accessToken = window.sessionStorage.getItem('access_token');
+  public removeTokenFromSessionStorage(): void {
+    const accessToken = window.sessionStorage.getItem('access_token');
     if (accessToken) {
       window.sessionStorage.removeItem('access_token');
     }

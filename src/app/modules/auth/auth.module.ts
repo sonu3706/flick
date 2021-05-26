@@ -9,7 +9,13 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, AuthComponent, ChangePasswordComponent, EditProfileComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    AuthComponent,
+    ChangePasswordComponent,
+    EditProfileComponent,
+  ],
   imports: [CommonModule, AuthRoutingModule, SharedModule],
   providers: [],
 })

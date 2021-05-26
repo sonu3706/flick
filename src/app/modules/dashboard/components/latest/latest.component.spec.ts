@@ -8,9 +8,8 @@ describe('LatestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LatestComponent ]
-    })
-    .compileComponents();
+      declarations: [LatestComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

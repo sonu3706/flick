@@ -1,3 +1,3 @@
 export class RegisterResponse {
-    public status: boolean | undefined;
+  public status: boolean | undefined;
 }
