@@ -5,7 +5,7 @@ export class LoginForm {
   @email()
   public userName: string | undefined;
   @required()
-  @maxLength({value: 20})
+  @maxLength({value: 10})
   @minLength({value: 8})
   public password: string | undefined;
 }

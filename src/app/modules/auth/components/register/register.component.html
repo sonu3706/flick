@@ -12,7 +12,7 @@
             <div class="form-group">
               <input type="text" matInput placeholder="Full Name" formControlName="name" />
             </div>
-            <mat-error *ngIf="registerFormGroup.controls.name.invalid">Cannot be empty</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.name.hasError('required')">Full Name is required</mat-error>
             <mat-icon matSuffix>account_circle</mat-icon>
           </mat-form-field>
         </div>
@@ -22,7 +22,9 @@
             <div class="form-group">
               <input type="email" matInput placeholder="Email Id" formControlName="email" />
             </div>
-            <mat-error *ngIf="registerFormGroup.controls.email.invalid">Enter a valid email id</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.email.hasError('email')">Enter a valid email id</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.email.hasError('required')">Email Id field cannot be empty
+            </mat-error>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
         </div>
@@ -32,7 +34,12 @@
             <div class="form-group">
               <input type="password" matInput placeholder="Password" formControlName="password" />
             </div>
-            <mat-error *ngIf="registerFormGroup.controls.password.invalid">Password should be of 8 character</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.password.hasError('required')">Password field cannot be left
+              empty</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.password.hasError('minLength')">Password is short, min should
+              be 8 chars</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.password.hasError('maxLength')">Password is too long, max
+              allowed is 10 chars</mat-error>
             <mat-icon matSuffix>password</mat-icon>
           </mat-form-field>
         </div>
@@ -42,9 +49,11 @@
             <div class="form-group">
               <input type="password" matInput placeholder="Retype password" formControlName="confirmPassword" />
             </div>
-            <mat-error *ngIf="registerFormGroup.controls.confirmPassword.invalid">Password should be of 8 character
+            <mat-error *ngIf="registerFormGroup.controls.confirmPassword.hasError('required')">Password should be of 8
+              character</mat-error>
+            <mat-error *ngIf="registerFormGroup.controls.confirmPassword.hasError('compare')">Password and confirm
+              password is not matching.
             </mat-error>
-            <mat-error *ngIf="registerFormGroup.controls.confirmPassword.invalid">Password did not match</mat-error>
             <mat-icon matSuffix>password</mat-icon>
           </mat-form-field>
         </div>

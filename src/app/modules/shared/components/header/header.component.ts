@@ -14,13 +14,14 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private tokenService: TokenService) {}
 
   ngOnInit(): void {
+   // this.isUserLoggedIn = true;
     this.checkIfUserIsLoggedIn();
   }
 
   public checkIfUserIsLoggedIn(): void {
     this.tokenService.userLoggedIn.subscribe((data: boolean) => {
       console.log(data);
-      
+
       this.isUserLoggedIn = data;
     });
   }

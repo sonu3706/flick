@@ -2,7 +2,7 @@
   <mat-card class="login-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title> Authenticate yourself</mat-card-title>
+      <mat-card-title>Security Clearance</mat-card-title>
       <mat-card-subtitle>Give your credential and lets validate your account</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="container">
@@ -12,7 +12,8 @@
             <div class="form-group">
               <input type="text" matInput placeholder="Email Id" formControlName="userName" />
             </div>
-            <mat-error *ngIf="loginFormGroup.controls.userName.invalid">Not a Email Id</mat-error>
+            <mat-error *ngIf="loginFormGroup.controls.userName.hasError('email')">Not a Email Id</mat-error>
+            <mat-error *ngIf="loginFormGroup.controls.userName.hasError('required')">Email Id is required to login</mat-error>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
         </div>
@@ -22,7 +23,8 @@
             <div class="form-group">
               <input type="password" matInput placeholder="Password" formControlName="password" />
             </div>
-            <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error>
+            <mat-error *ngIf="loginFormGroup.controls.password.hasError('minLength')">Password is still short.</mat-error>
+            <mat-error *ngIf="loginFormGroup.controls.password.hasError('maxLength')">You have reached max length of your password.</mat-error>
             <mat-icon matSuffix>password</mat-icon>
           </mat-form-field>
         </div>

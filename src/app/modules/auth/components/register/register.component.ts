@@ -15,6 +15,7 @@ import { RestApiService } from 'src/app/services/utilities/restapi.service';
 export class RegisterComponent implements OnInit {
   public registerFormGroup: FormGroup;
   public registerForm: RegisterForm;
+  public status: boolean;
 
   constructor(private formBuilder: RxFormBuilder, private registerService: RestApiService<RegisterResponse>, private router: Router) {
     this.registerForm = new RegisterForm();
@@ -22,6 +23,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.status = false;
   }
 
   public onSubmit(): void {
@@ -46,10 +48,10 @@ export class RegisterComponent implements OnInit {
   }
 
   public prepareUserObject(): User {
-    let user: User = new User();
+    const user: User = new User();
     user.userEmail = this.registerFormGroup.controls.email.value;
-    user.firstName = this.registerFormGroup.controls.name.value.split(" ")[0];
-    user.lastName = this.registerFormGroup.controls.name.value.split(" ")[1];
+    user.firstName = this.registerFormGroup.controls.name.value.split('')[0];
+    user.lastName = this.registerFormGroup.controls.name.value.split('')[1];
     user.password = this.registerFormGroup.controls.password.value;
     return user;
   }

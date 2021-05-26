@@ -1,4 +1,4 @@
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 import {
   ComponentFixture,
   fakeAsync,
@@ -6,18 +6,18 @@ import {
   TestBed,
   tick,
 } from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {Router} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Router } from '@angular/router';
 import {
   RouterTestingModule,
   SpyNgModuleFactoryLoader,
 } from '@angular/router/testing';
-import {routes} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {AuthModule} from './modules/auth/auth.module';
-import {DashboardModule} from './modules/dashboard/dashboard.module';
-import {SharedModule} from './modules/shared/shared.module';
+import { routes } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthModule } from './modules/auth/auth.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 describe('AppRouting', () => {
   let location: Location;
@@ -70,7 +70,7 @@ describe('AppRouting', () => {
   /* Testing loading of /auth/login */
   it('Should navigate to /auth/login', fakeAsync(() => {
     const loader = TestBed.inject(SpyNgModuleFactoryLoader);
-    loader.stubbedModules = {lazyModule: AuthModule};
+    loader.stubbedModules = { lazyModule: AuthModule };
     router.resetConfig([
       {
         path: 'auth',
@@ -88,7 +88,7 @@ describe('AppRouting', () => {
   /* Test case for loading /auth/register */
   it('Should navigate to /auth/register url ', fakeAsync(() => {
     const loader = TestBed.inject(SpyNgModuleFactoryLoader);
-    loader.stubbedModules = {lazyModule: AuthModule};
+    loader.stubbedModules = { lazyModule: AuthModule };
     router.resetConfig([
       {
         path: 'auth',
@@ -105,7 +105,7 @@ describe('AppRouting', () => {
   /* Test case for loading dashboard */
   it('Should navigate to /dashboard url ', fakeAsync(() => {
     const loader = TestBed.inject(SpyNgModuleFactoryLoader);
-    loader.stubbedModules = {lazyModule: DashboardModule};
+    loader.stubbedModules = { lazyModule: DashboardModule };
     router.resetConfig([
       {
         path: 'dashboard',
