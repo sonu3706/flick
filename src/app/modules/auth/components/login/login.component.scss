@@ -1,0 +1,19 @@
+.example-header-image {
+  background-image: url("../../../../../assets/images/LoginIconAppl.png");
+  background-size: cover;
+}
+
+.main-div {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 45%;
+}
+
+.mat-form-field {
+  width: 100%;
+}

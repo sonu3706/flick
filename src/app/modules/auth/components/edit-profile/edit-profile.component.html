@@ -1,0 +1,47 @@
+<div class="container container-fluid main-div">
+  <mat-card class="edit-profile-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <mat-icon>mode</mat-icon>
+      </div>
+      <mat-card-title>Update your details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="edit-profile-form">
+        <!-- First Name Section -->
+        <div class="change-password-form">
+          <mat-form-field appearance="outline">
+            <div class="form-group">
+              <input type="text" matInput placeholder="First Name" />
+            </div>
+            <!-- <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error> -->
+            <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+        </div>
+        <!-- Last Name Section -->
+        <div class="change-password-form">
+          <mat-form-field appearance="outline">
+            <div class="form-group">
+              <input type="text" matInput placeholder="Last Name" />
+            </div>
+            <!-- <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error> -->
+            <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+        </div>
+        <!-- Email Section -->
+        <div class="change-password-form">
+          <mat-form-field appearance="outline">
+            <div class="form-group">
+              <input type="email" matInput placeholder="email" />
+            </div>
+            <!-- <mat-error *ngIf="loginFormGroup.controls.password.invalid">Password should be of 8 character</mat-error> -->
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Update</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

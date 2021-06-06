@@ -1,0 +1,16 @@
+.example-spacer {
+  flex: 2 2 auto;
+}
+
+.search {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  margin-left: 50rem;
+  z-index: 100;
+}
+
+button:focus {
+  outline: none;
+  border: 0;
+}
