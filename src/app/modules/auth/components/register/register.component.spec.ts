@@ -41,9 +41,7 @@ describe('RegisterComponent', () => {
       ],
       providers: [{ provide: RestApiService, useValue: registerSpyObject }],
     }).compileComponents();
-    registerServiceSpy = TestBed.inject(RestApiService) as jasmine.SpyObj<
-      RestApiService<RegisterResponse>
-    >;
+    registerServiceSpy = TestBed.inject(RestApiService);
   });
 
   beforeEach(() => {
@@ -84,6 +82,13 @@ describe('RegisterComponent', () => {
     // @ts-ignore
     registerServiceSpy.postData.and.returnValue(throwError('Error'));
     component.registerApi();
+
+    expect(registerServiceSpy.postData).toHaveBeenCalled();
+    expect(registerServiceSpy.postData).toHaveBeenCalledWith(
+      'http://localhost:8081/api/v1/users',
+      '/register',
+      getUserObject()
+    );
 
     tick();
     flush();
