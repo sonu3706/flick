@@ -6,6 +6,7 @@ import { RegisterResponse } from 'src/app/models/register-response.model';
 import { User } from 'src/app/models/user.model';
 import { RestApiService } from 'src/app/services/utilities/restapi.service';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,7 +19,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: RxFormBuilder,
-    private registerService: RestApiService<RegisterResponse>
+    private registerService: RestApiService<RegisterResponse>,
+    private router: Router
   ) {
     this.createReactiveForm();
   }
@@ -50,7 +52,9 @@ export class RegisterComponent implements OnInit {
         (data: RegisterResponse) => {
           if (data.status) {
             this.status = data.status;
-            // this.router.navigate(['/auth/login']);
+            /*this.router.navigate(['/auth/login']).then((r) => {
+              console.log('Navigated to login', r);
+            });*/
           }
         },
         (error: HttpErrorResponse) => {
@@ -62,8 +66,8 @@ export class RegisterComponent implements OnInit {
   public prepareUserObject(): User {
     const user: User = new User();
     user.userEmail = this.registerFormGroup.controls.email.value;
-    user.firstName = this.registerFormGroup.controls.name.value.split('')[0];
-    user.lastName = this.registerFormGroup.controls.name.value.split('')[1];
+    user.firstName = this.registerFormGroup.controls.name.value.split(' ')[0];
+    user.lastName = this.registerFormGroup.controls.name.value.split(' ')[1];
     user.password = this.registerFormGroup.controls.password.value;
     return user;
   }

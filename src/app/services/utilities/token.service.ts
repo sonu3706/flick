@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TokenService {
   public userLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
+    true
   );
 
   public readTokenFromSessionStorage(): void {

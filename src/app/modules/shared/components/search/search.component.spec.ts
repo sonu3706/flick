@@ -8,8 +8,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
 import { By } from '@angular/platform-browser';
-
-fdescribe('SearchComponent', () => {
+// Test Suit
+describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
 
@@ -34,6 +34,7 @@ fdescribe('SearchComponent', () => {
     fixture.detectChanges();
   });
 
+  // Unit test
   it('should create', () => {
     expect(component).toBeTruthy();
   });
